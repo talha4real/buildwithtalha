@@ -1,5 +1,25 @@
 import { createTheme } from '@mui/material/styles'
 
+// Extend the theme interface for glassmorphism
+declare module '@mui/material/styles' {
+  interface Theme {
+    glassmorphism: {
+      background: string
+      backdropFilter: string
+      border: string
+      fallbackBackground: string
+    }
+  }
+  interface ThemeOptions {
+    glassmorphism?: {
+      background?: string
+      backdropFilter?: string
+      border?: string
+      fallbackBackground?: string
+    }
+  }
+}
+
 export const theme = createTheme({
   palette: {
     primary: {
@@ -36,6 +56,12 @@ export const theme = createTheme({
   shape: {
     borderRadius: 8,
   },
+  glassmorphism: {
+    background: 'rgba(255, 255, 255, 0.1)',
+    backdropFilter: 'blur(10px)',
+    border: '1px solid rgba(255, 255, 255, 0.2)',
+    fallbackBackground: 'rgba(255, 255, 255, 0.9)',
+  },
   components: {
     MuiButton: {
       styleOverrides: {
@@ -49,6 +75,16 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          // Fallback for browsers that don't support backdrop-filter
+          '@supports not (backdrop-filter: blur(10px))': {
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+          },
         },
       },
     },

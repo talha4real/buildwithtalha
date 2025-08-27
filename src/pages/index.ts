@@ -1,4 +1,6 @@
 export { Home } from './Home'
 export { About } from './About'
 export { Contact } from './Contact'
+export { Services } from './Services'
+export { Tracking } from './Tracking'
 export { NotFound } from './NotFound'

@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import { Outlet } from 'react-router-dom'
 import { Header } from './Header'
+import { ErrorBoundary } from './ErrorBoundary'
 
 export const Layout = () => {
   return (
@@ -12,8 +13,17 @@ export const Layout = () => {
         minWidth: '100vw',
       }}
     >
-      <Header />
-      <Box component="main" sx={{ flexGrow: 1, py: 3 }}>
+      <ErrorBoundary>
+        <Header />
+      </ErrorBoundary>
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          // Remove the py: 3 since we want content to start right after header
+          minHeight: 'calc(100vh - 64px)',
+        }}
+      >
         <Outlet />
       </Box>
     </Box>

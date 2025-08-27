@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Layout } from '@/components/common'
-import { Home, About, Contact, NotFound } from '@/pages'
+import { Home, About, Contact, Services, Tracking, NotFound } from '@/pages'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +18,14 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />,
+      },
+      {
+        path: 'services',
+        element: <Services />,
+      },
+      {
+        path: 'tracking',
+        element: <Tracking />,
       },
       {
         path: '*',
