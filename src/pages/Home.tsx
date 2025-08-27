@@ -68,17 +68,17 @@ export const Home = () => {
                   letterSpacing: '-0.02em',
                 }}
               >
-                BRINGING THE WORLD
+                FROM LOCAL TO
                 <br />
                 <Box component="span" sx={{ color: '#FFD700' }}>
-                  CLOSER
+                  LEGENDARY
                 </Box>
-                , ONE DELIVERY
+                ,
                 <br />
-                AT A TIME
+                BE SEEN
               </Typography>
 
-              <Typography
+              {/* <Typography
                 variant="h6"
                 sx={{
                   fontSize: { xs: '1rem', md: '1.25rem' },
@@ -89,7 +89,7 @@ export const Home = () => {
                 }}
               >
                 Fast, dependable, and most safest shipping for all your cargo.
-              </Typography>
+              </Typography> */}
             </Box>
           </Box>
         </Container>
