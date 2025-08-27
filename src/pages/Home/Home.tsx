@@ -1,4 +1,5 @@
 import { Box, Typography, Container } from '@mui/material'
+import ServicesSection from './components/ServicesSection'
 
 export const Home = () => {
   return (
@@ -6,7 +7,7 @@ export const Home = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          height: { xs: '80vh', md: '85vh' },
+          height: { xs: '70vh', md: '80vh' },
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           position: 'relative',
           display: 'flex',
@@ -59,10 +60,11 @@ export const Home = () => {
               <Typography
                 variant="h1"
                 sx={{
-                  fontSize: { xs: '2.5rem', md: '4rem', lg: '5rem' },
+                  fontSize: { xs: '2.5rem', md: '4rem', lg: '7rem' },
                   fontWeight: 900,
                   lineHeight: 0.9,
-                  mb: { lg: 12 },
+                  mb: { md: 12, lg: 24 },
+                  mt: { md: 6, lg: 12 },
                   textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
                   textTransform: 'uppercase',
                   letterSpacing: '-0.02em',
@@ -83,7 +85,6 @@ export const Home = () => {
                 sx={{
                   fontSize: { xs: '1rem', md: '1.25rem' },
                   fontWeight: 400,
-                  mb: 4,
                   opacity: 0.9,
                   maxWidth: '500px',
                 }}
@@ -95,16 +96,8 @@ export const Home = () => {
         </Container>
       </Box>
 
-      {/* Additional Content Section - Ready for more content */}
-      <Container maxWidth="xl" sx={{ py: 8 }}>
-        <Typography variant="h4" align="center" gutterBottom>
-          More Content Goes Here
-        </Typography>
-        <Typography variant="body1" align="center" color="text.secondary">
-          You can add more sections, features, testimonials, etc. below the hero
-          section.
-        </Typography>
-      </Container>
+      {/* Services Section */}
+      <ServicesSection />
     </Box>
   )
 }

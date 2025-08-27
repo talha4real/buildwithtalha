@@ -110,7 +110,7 @@ export const Header: React.FC<HeaderProps> = React.memo(
               boxShadow: transparent
                 ? '0 8px 32px rgba(0, 0, 0, 0.15)'
                 : theme.shadows[elevation],
-              borderRadius: { xs: 2, md: 3 },
+              borderRadius: { xs: 1, md: 1 },
               // Fallback for browsers without backdrop-filter support
               '@supports not (backdrop-filter: blur(10px))': {
                 backgroundColor: transparent
@@ -197,7 +197,7 @@ export const Header: React.FC<HeaderProps> = React.memo(
                         },
                       }}
                     >
-                      {item.label}
+                      <Typography variant="body1">{item.label}</Typography>
                     </Button>
                   ))}
                 </Box>

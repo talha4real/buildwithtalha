@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Layout } from '@/components/common'
-import { Home, About, Contact, Services, Tracking, NotFound } from '@/pages'
+import { About, Contact, Services, Tracking, NotFound, Home } from '@/pages'
 
 const router = createBrowserRouter([
   {
