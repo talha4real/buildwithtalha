@@ -11,40 +11,15 @@ export const Home = () => {
       <Box
         sx={{
           height: { xs: '70vh', md: '80vh' },
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          background: '#1a237e',
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
           overflow: 'hidden',
+          borderBottomLeftRadius: { xs: 24, md: 32 },
+          borderBottomRightRadius: { xs: 24, md: 32 },
         }}
       >
-        {/* Background Image */}
-        <Box
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage:
-              'url(https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.8,
-            '&::after': {
-              content: '""',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background:
-                'linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.7) 100%)',
-            },
-          }}
-        />
-
         <Container
           maxWidth="xl"
           sx={{ position: 'relative', zIndex: 2, paddingX: '0px !important' }}
