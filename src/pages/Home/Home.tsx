@@ -1,5 +1,8 @@
 import { Box, Typography, Container } from '@mui/material'
 import ServicesSection from './components/ServicesSection'
+import TechnologySection from './components/TechnologySection'
+import PrecisionHandlingSection from './components/PrecisionHandlingSection'
+import { TestimonialsSection } from './components/TestimonialsSection'
 
 export const Home = () => {
   return (
@@ -98,6 +101,15 @@ export const Home = () => {
 
       {/* Services Section */}
       <ServicesSection />
+
+      {/* Technology Section */}
+      <TechnologySection />
+
+      {/* Precision Handling Section */}
+      <PrecisionHandlingSection />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
     </Box>
   )
 }
