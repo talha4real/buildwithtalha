@@ -1,6 +1,7 @@
 import { Box } from '@mui/material'
 import { Outlet } from 'react-router-dom'
 import { Header } from './Header'
+import { Footer } from './Footer'
 import { ErrorBoundary } from './ErrorBoundary'
 
 export const Layout = () => {
@@ -10,7 +11,9 @@ export const Layout = () => {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
-        minWidth: '100vw',
+        width: '100%',
+        maxWidth: '100vw',
+        overflow: 'hidden',
       }}
     >
       <ErrorBoundary>
@@ -26,6 +29,9 @@ export const Layout = () => {
       >
         <Outlet />
       </Box>
+      <ErrorBoundary>
+        <Footer />
+      </ErrorBoundary>
     </Box>
   )
 }
