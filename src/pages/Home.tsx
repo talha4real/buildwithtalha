@@ -1,127 +1,110 @@
-import { useState } from 'react'
-import {
-  Container,
-  Typography,
-  Button,
-  Box,
-  Card,
-  CardContent,
-  Grid,
-  TextField,
-  Chip,
-  Alert,
-} from '@mui/material'
+import { Box, Typography, Container } from '@mui/material'
 
 export const Home = () => {
-  const [count, setCount] = useState(0)
-  const [name, setName] = useState('')
-
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h2" component="h1" gutterBottom align="center">
-          Welcome to React + TypeScript + MUI
-        </Typography>
+    <Box>
+      {/* Hero Section */}
+      <Box
+        sx={{
+          height: { xs: '80vh', md: '85vh' },
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          overflow: 'hidden',
+        }}
+      >
+        {/* Background Image */}
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage:
+              'url(https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.8,
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background:
+                'linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.7) 100%)',
+            },
+          }}
+        />
 
-        <Alert severity="success" sx={{ mb: 4 }}>
-          Your project is successfully set up with Material-UI theming!
-        </Alert>
-
-        <Grid container spacing={4}>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Card>
-              <CardContent>
-                <Typography variant="h5" component="h2" gutterBottom>
-                  Counter Example
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ mb: 2 }}
-                >
-                  This demonstrates state management and MUI button styling.
-                </Typography>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <Button
-                    variant="contained"
-                    onClick={() => setCount(count + 1)}
-                  >
-                    Count: {count}
-                  </Button>
-                  <Chip
-                    label={`Current: ${count}`}
-                    color="primary"
-                    variant="outlined"
-                  />
+        <Container
+          maxWidth="xl"
+          sx={{ position: 'relative', zIndex: 2, paddingX: '0px !important' }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column', md: 'row' },
+              alignItems: 'center',
+              gap: 4,
+              py: { xs: 4, md: 8 },
+            }}
+          >
+            {/* Left Content */}
+            <Box sx={{ flex: 1, color: 'white' }}>
+              <Typography
+                variant="h1"
+                sx={{
+                  fontSize: { xs: '2.5rem', md: '4rem', lg: '5rem' },
+                  fontWeight: 900,
+                  lineHeight: 0.9,
+                  mb: { lg: 12 },
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                BRINGING THE WORLD
+                <br />
+                <Box component="span" sx={{ color: '#FFD700' }}>
+                  CLOSER
                 </Box>
-              </CardContent>
-            </Card>
-          </Grid>
+                , ONE DELIVERY
+                <br />
+                AT A TIME
+              </Typography>
 
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Card>
-              <CardContent>
-                <Typography variant="h5" component="h2" gutterBottom>
-                  Form Example
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ mb: 2 }}
-                >
-                  This shows MUI form components with controlled inputs.
-                </Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                  <TextField
-                    label="Enter your name"
-                    variant="outlined"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    fullWidth
-                  />
-                  <Button variant="outlined" disabled={!name}>
-                    {name ? `Hello, ${name}!` : 'Enter a name'}
-                  </Button>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-
-          <Grid size={12}>
-            <Card>
-              <CardContent>
-                <Typography variant="h5" component="h2" gutterBottom>
-                  Theme Colors
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ mb: 2 }}
-                >
-                  These buttons demonstrate the custom theme colors.
-                </Typography>
-                <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-                  <Button variant="contained" color="primary">
-                    Primary
-                  </Button>
-                  <Button variant="contained" color="secondary">
-                    Secondary
-                  </Button>
-                  <Button variant="outlined" color="primary">
-                    Primary Outlined
-                  </Button>
-                  <Button variant="outlined" color="secondary">
-                    Secondary Outlined
-                  </Button>
-                  <Button variant="text" color="primary">
-                    Primary Text
-                  </Button>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontSize: { xs: '1rem', md: '1.25rem' },
+                  fontWeight: 400,
+                  mb: 4,
+                  opacity: 0.9,
+                  maxWidth: '500px',
+                }}
+              >
+                Fast, dependable, and most safest shipping for all your cargo.
+              </Typography>
+            </Box>
+          </Box>
+        </Container>
       </Box>
-    </Container>
+
+      {/* Additional Content Section - Ready for more content */}
+      <Container maxWidth="xl" sx={{ py: 8 }}>
+        <Typography variant="h4" align="center" gutterBottom>
+          More Content Goes Here
+        </Typography>
+        <Typography variant="body1" align="center" color="text.secondary">
+          You can add more sections, features, testimonials, etc. below the hero
+          section.
+        </Typography>
+      </Container>
+    </Box>
   )
 }
