@@ -181,12 +181,23 @@ export const TestimonialsSection = () => {
               <Box
                 key={testimonial.id}
                 sx={{
+                  width: {
+                    xs: 'calc(100% - 16px)',
+                    sm: 'calc(50% - 10px)',
+                    md: 'calc(33.333% - 16px)',
+                  },
                   minWidth: {
                     xs: 'calc(100% - 16px)',
                     sm: 'calc(50% - 10px)',
                     md: 'calc(33.333% - 16px)',
                   },
+                  maxWidth: {
+                    xs: 'calc(100% - 16px)',
+                    sm: 'calc(50% - 10px)',
+                    md: 'calc(33.333% - 16px)',
+                  },
                   flexShrink: 0,
+                  flexGrow: 0,
                 }}
               >
                 <TestimonialCard testimonial={testimonial} />
@@ -213,6 +224,10 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
         boxShadow:
           '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         border: '1px solid #f1f5f9',
+        width: '100%',
+        maxWidth: '100%',
+        overflow: 'hidden',
+        justifyContent: 'space-between',
       }}
     >
       {/* Header */}
@@ -226,7 +241,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
       >
         <Typography
           sx={{
-            fontSize: '0.75rem',
+            fontSize: '1.25rem',
             fontWeight: 600,
             color: '#64748b',
             letterSpacing: '0.1em',
@@ -251,17 +266,33 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
       </Box>
 
       {/* Testimonial Text */}
-      <Typography
+      <Box
         sx={{
-          fontSize: '1rem',
-          lineHeight: 1.6,
-          color: '#334155',
-          fontWeight: 500,
-          mb: 'auto',
+          width: '100%',
+          maxWidth: '100%',
+          overflow: 'hidden',
         }}
       >
-        {testimonial.text}
-      </Typography>
+        <Typography
+          sx={{
+            fontSize: { xs: '1.1rem', md: '1.25rem' },
+            lineHeight: 1.5,
+            color: '#334155',
+            fontWeight: 500,
+            mb: 'auto',
+            wordWrap: 'break-word',
+            overflowWrap: 'break-word',
+            whiteSpace: 'normal',
+            wordBreak: 'break-word',
+            hyphens: 'auto',
+            display: 'block',
+            width: '100%',
+            maxWidth: '100%',
+          }}
+        >
+          {testimonial.text}
+        </Typography>
+      </Box>
 
       {/* Footer */}
       <Box
@@ -271,7 +302,17 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           alignItems: 'center',
           mt: 3,
           pt: 3,
-          borderTop: '1px solid #f1f5f9',
+          position: 'relative',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '1px',
+            background:
+              'linear-gradient(90deg, transparent 0%, #666 20%, #666 80%, transparent 100%)',
+          },
         }}
       >
         {/* User Info */}
@@ -293,7 +334,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           <Box sx={{ flex: 1, minWidth: 0 }}>
             <Typography
               sx={{
-                fontSize: { xs: '0.85rem', md: '0.95rem' },
+                fontSize: { xs: '1.25rem', md: '1.5rem' },
                 fontWeight: 600,
                 color: '#1e293b',
                 lineHeight: 1.2,
@@ -303,7 +344,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
             </Typography>
             <Typography
               sx={{
-                fontSize: { xs: '0.75rem', md: '0.85rem' },
+                fontSize: { xs: '1rem', md: '1.25rem' },
                 color: '#64748b',
                 lineHeight: 1.2,
               }}
@@ -319,7 +360,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
             <Typography
               key={index}
               sx={{
-                fontSize: '0.8rem',
+                fontSize: '1.25rem',
                 color: '#64748b',
                 lineHeight: 1.3,
                 fontWeight: 500,
